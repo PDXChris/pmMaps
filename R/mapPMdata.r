@@ -12,8 +12,7 @@
 #' @export
 
 
-mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldRivers=TRUE,
-                      ldStreams=FALSE){
+mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldStreams=FALSE){
   # load data if specified
   if (!is.null(loadObj)) load(loadObj)
   # Default GISdir
@@ -28,13 +27,12 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldRivers=TRUE,
   # wtshds.shp <- readShapePoly(file.path(datwd, 'BES_Topo_Watershed.shp'))
 
   ### Rivers
-  if (ldRivers) load('./data/riversFonly.rda')
-  if (ldStreams) load('./data/streamsFonly.rda')
+  if (ldStreams) load('../pmMapsFiles/data/streamsFonly.rda')
   ## To read in rivers polygon
   # rivers <- readOGR(dsn=GISdir, layer="pdx_waterbodies")
   # rivers@data$id = rownames(rivers@data)
   # rivers.points = fortify(rivers, region="id")
-  # rivers.df = merge(rivers.points, rivers@data, by="id")
+  # rivers = merge(rivers.points, rivers@data, by="id")
 
   ### PAWMAP Stations
   # stations <- readOGR(dsn=GISdir, layer="Final_PAWMAP_ALLPanels")
@@ -48,15 +46,13 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldRivers=TRUE,
 
   p <- ggplot() +
     # Map rivers
-    geom_polygon(data=rivers.df[rivers.df$hole=='FALSE',],
+    geom_polygon(data=rivers[rivers$hole=='FALSE',],
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='royalblue2') +
-    geom_polygon(data=rivers.df[rivers.df$hole==TRUE,],
+    geom_polygon(data=rivers[rivers$hole==TRUE,],
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='white') +
 
-    # Map streams
-    geom_line(aes(long, lat, group=group), colour='royalblue2', data=streams) +
     coord_equal(xlim=c(7600000, 7705000), ylim=c(647000,732000)) +
     xlab('') + ylab('')  + theme_bw() +
 
@@ -75,6 +71,11 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldRivers=TRUE,
     scale_size(name='Mean', range=c(5,12)) +
     scale_color_manual(name='Detected', values=c('red', 'darkgrey')) +
     guides(color = guide_legend(override.aes = list(size = 6)))
+
+  if (ldStreams) {
+    # Map streams
+    p <- p + geom_line(aes(long, lat, group=group), colour='royalblue2', data=streams)
+  }
 
   p
 }
