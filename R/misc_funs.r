@@ -1,12 +1,13 @@
 #' @import plyr
 #' @export
 
-statWQMnCns <- function(dfm) {
-  statWQMnCns1 <- function(x) {
-    mn=mean(x[['result']], na.rm = TRUE)
+statByStation <- function(dfm, stat = 'mean', station = 'loc_code',
+                          vbl = 'result') {
+  statByStat_1 <- function(x) {
+    stat = do.call(stat, list(x[['result']], na.rm = TRUE))
     cns=ifelse(any(x[['cens']]=='='), 'Detected', 'None\nDetected')
-    data.frame(mn, cns)
+    data.frame(stat, cns)
   }
 
-  ddply(dfm, 'loc_code', statWQMnCns1)
+  ddply(dfm, station, statByStat_1)
 }
