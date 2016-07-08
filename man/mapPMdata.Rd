@@ -15,7 +15,8 @@ mapPMdata(dfm, vbl, loadObj = NULL, GISdir = NULL, ldStreams = FALSE)
 
 \item{GISdir}{Path to GIS data}
 
-\item{ldStreams}{Should the streams shapefile be loaded?}
+\item{ldStreams}{Should the streams shapefile be loaded?  Note: this layer
+takes considerable time to plot}
 
 \item{ldRivers}{Should the river shapefile be loaded?}
 }

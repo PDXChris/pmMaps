@@ -1,11 +1,11 @@
 Package: pmMaps
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Map PAWMAP Data
 Version: 0.1
 Date: 2015-11-25
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Chris Prescott
+Maintainer: Chris Precott <chris.prescott@portlandoregon.gov>
+Description: Functions for formatting and mapping PAWMAP data.
 License: What license is it under?
 LazyData: TRUE
 RoxygenNote: 5.0.1
