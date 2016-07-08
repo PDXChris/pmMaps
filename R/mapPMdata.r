@@ -22,27 +22,10 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldStreams=FALSE){
 
   GISdir <- '../../../../General_GIS'
 
-  ## Old way
-  # streams <- readOGR(GISdir, 'pdx_streams_red.shp')
-  # rivers.shp <- readShapePoly(file.path(GISdir, 'pdx_waterbodies.shp'))
-  # wtshds.shp <- readShapePoly(file.path(datwd, 'BES_Topo_Watershed.shp'))
-  # freeways <- readOGR(GISdir, 'freeway_new')
-  # arterials <- readOGR(GISdir, 'maj_art')
-
-  ### Rivers
+  ### load streams if TRUE
   if (ldStreams) load('../pmMapsFiles/data/streamsFonly.rda')
-  ## To read in rivers polygon
-  # rivers <- readOGR(dsn=GISdir, layer="pdx_waterbodies")
-  # rivers@data$id = rownames(rivers@data)
-  # rivers.points = fortify(rivers, region="id")
-  # rivers = merge(rivers.points, rivers@data, by="id")
 
-  ### PAWMAP Stations
-  # stations <- readOGR(dsn=GISdir, layer="Final_PAWMAP_ALLPanels")
-  # stations@data$id = rownames(stations@data)
-  # stations.points = fortify(stations, region="id")
-  # stations.df = merge(stations.points, stations@data, by="id")
-
+  # Merge station shapefile w/ data
   mapStations <- pmStations
   mapStations@data <- merge(pmStations@data, dfm, by.x='id', by.y='loc_code')
 
@@ -61,18 +44,14 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldStreams=FALSE){
     # geom_path(aes(long, lat, group=group), colour='red', lwd=1.7, data=freeway) +
 
 
-    # Set map elements
-    coord_equal(xlim=c(7600000, 7705000), ylim=c(647000,732000)) +
-    xlab('') + ylab('')  + theme_bw() +
-
     # Set up aesthetic elements
     coord_equal(xlim=c(7600000, 7705000), ylim=c(647000,732000)) +
     xlab('') + ylab('')  + theme_bw() +
     theme(axis.text.x=element_blank(), axis.text.y=element_blank(),
           panel.grid.major=element_blank(),
-          plot.title=element_text(size=16, face="bold")) +
+          plot.title=element_text(size=16, face="bold"))
 
-
+  # Add streams layer if TRUE
   if (ldStreams) {
     # Map streams
     p <- p + geom_line(aes(long, lat, group=group),
@@ -86,8 +65,8 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldStreams=FALSE){
 
     # Set scales
     # scale_color_manual(name='Detected', values=c('red', 'gray44')) +
-    scale_size(name='Mean', range=c(5,12))
+    scale_size(name='Mean', range=c(3,12))
 
-  p
+  return(p)
 }
 
