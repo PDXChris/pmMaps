@@ -13,7 +13,8 @@
 #' @export
 
 
-mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldStreams=FALSE){
+mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, pltArterial=TRUE,
+                      ldStreams=FALSE){
   # load data if specified
   if (!is.null(loadObj)) load(loadObj)
   # Default GISdir
@@ -39,23 +40,25 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, ldStreams=FALSE){
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='white') +
 
-    # Add highways as landmarks
-#     geom_path(aes(long, lat, group=group), colour='black', lwd=1, data=arter) +
-    # geom_path(aes(long, lat, group=group), colour='red', lwd=1.7, data=freeway) +
-
-
     # Set up aesthetic elements
-    coord_equal(xlim=c(7600000, 7705000), ylim=c(647000,732000)) +
+    coord_equal(xlim=c(7607000, 7700000), ylim=c(650000,729000)) +
     xlab('') + ylab('')  + theme_bw() +
     theme(axis.text.x=element_blank(), axis.text.y=element_blank(),
           panel.grid.major=element_blank(),
           plot.title=element_text(size=16, face="bold"))
 
-  # Add streams layer if TRUE
+    # Add streams layer if TRUE
   if (ldStreams) {
     # Map streams
     p <- p + geom_line(aes(long, lat, group=group),
                        colour='royalblue2', data=streams)
+  }
+
+  if (pltArterial) {
+    # Add highways as landmarks
+    p <- p + geom_path(aes(long, lat, group=group), colour='black', lwd=1, data=arter) +
+      geom_path(aes(long, lat, group=group), colour='red', lwd=1.7, data=freeway)
+
   }
 
   # map PAWMAP station data on top

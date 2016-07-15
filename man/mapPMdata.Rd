@@ -4,7 +4,8 @@
 \alias{mapPMdata}
 \title{Map PAWMAP data}
 \usage{
-mapPMdata(dfm, vbl, loadObj = NULL, GISdir = NULL, ldStreams = FALSE)
+mapPMdata(dfm, vbl, loadObj = NULL, GISdir = NULL, pltArterial = TRUE,
+  ldStreams = FALSE)
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}
