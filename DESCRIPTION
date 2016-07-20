@@ -9,3 +9,4 @@ Description: Functions for formatting and mapping PAWMAP data.
 License: What license is it under?
 LazyData: TRUE
 RoxygenNote: 5.0.1
+Imports: ggplot2, rgeos, rgdal, plyr, maptools

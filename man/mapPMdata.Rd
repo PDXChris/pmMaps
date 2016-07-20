@@ -5,7 +5,7 @@
 \title{Map PAWMAP data}
 \usage{
 mapPMdata(dfm, vbl, loadObj = NULL, GISdir = NULL, pltArterial = TRUE,
-  ldStreams = FALSE)
+  ldStreams = FALSE, size = c(3, 12))
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}

@@ -14,7 +14,7 @@
 
 
 mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, pltArterial=TRUE,
-                      ldStreams=FALSE){
+                      ldStreams=FALSE, size=c(3,12)){
   # load data if specified
   if (!is.null(loadObj)) load(loadObj)
   # Default GISdir
@@ -68,7 +68,7 @@ mapPMdata <- function(dfm, vbl, loadObj=NULL, GISdir=NULL, pltArterial=TRUE,
 
     # Set scales
     # scale_color_manual(name='Detected', values=c('red', 'gray44')) +
-    scale_size(name='Mean', range=c(3,12))
+    scale_size(name='Mean', range=size)
 
   return(p)
 }
