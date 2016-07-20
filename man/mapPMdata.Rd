@@ -16,10 +16,12 @@ mapPMdata(dfm, vbl, loadObj = NULL, GISdir = NULL, pltArterial = TRUE,
 
 \item{GISdir}{Path to GIS data}
 
+\item{pltArterial}{Should the arterials shapefile be plotted?}
+
 \item{ldStreams}{Should the streams shapefile be loaded?  Note: this layer
 takes considerable time to plot}
 
-\item{ldRivers}{Should the river shapefile be loaded?}
+\item{size}{The size range for the plotted points}
 }
 \description{
 Map PAWMAP data

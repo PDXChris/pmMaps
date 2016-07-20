@@ -3,9 +3,10 @@
 #' @param vbl The field containing the value to map
 #' @param loadObj Path of any data objects that need to be loaded (e.g., wq14)
 #' @param GISdir Path to GIS data
-#' @param ldRivers Should the river shapefile be loaded?
+#' @param pltArterial Should the arterials shapefile be plotted?
 #' @param ldStreams Should the streams shapefile be loaded?  Note: this layer
 #' takes considerable time to plot
+#' @param size The size range for the plotted points
 #' @import rgdal
 #' @import ggplot2
 #' @import rgeos
