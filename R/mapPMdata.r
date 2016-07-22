@@ -7,10 +7,7 @@
 #' @param ldStreams Should the streams shapefile be loaded?  Note: this layer
 #' takes considerable time to plot
 #' @param size The size range for the plotted points
-#' @import rgdal
 #' @import ggplot2
-#' @import rgeos
-#' @import maptools
 #' @export
 
 
