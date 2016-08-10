@@ -4,22 +4,15 @@
 \alias{mapPMdata}
 \title{Map PAWMAP data}
 \usage{
-mapPMdata(dfm, vbl, loadObj = NULL, GISdir = NULL, pltArterial = TRUE,
-  ldStreams = FALSE, size = c(3, 12))
+mapPMdata(dfm, vbl, color = NULL, size = c(3, 12))
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}
 
 \item{vbl}{The field containing the value to map}
 
-\item{loadObj}{Path of any data objects that need to be loaded (e.g., wq14)}
-
-\item{GISdir}{Path to GIS data}
-
-\item{pltArterial}{Should the arterials shapefile be plotted?}
-
-\item{ldStreams}{Should the streams shapefile be loaded?  Note: this layer
-takes considerable time to plot}
+\item{color}{The field containing the color variable.  Typically used to
+indicate percent detection. If not specified, the aesthetic is not mapped.}
 
 \item{size}{The size range for the plotted points}
 }
