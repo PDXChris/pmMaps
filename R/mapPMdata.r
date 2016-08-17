@@ -1,13 +1,15 @@
 #' Map PAWMAP data
 #' @param dfm Data frame with data to be mapped
 #' @param vbl The field containing the value to map
-#' @param color The field containing the color variable.  Typically used to
-#' indicate percent detection. If not specified, the aesthetic is not mapped.
+#' @param color The field containing the variable for the color aesthetic.
+#' Typically used to indicate percent detection. If not specified, the
+#' aesthetic is not mapped.
 #' @param size The size range for the plotted points
+#' @param legend Text for the map legend
 #' @import ggplot2
 #' @export
 
-mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12)){
+mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend=""){
 
   # plot base map
   p <- mapPMbase()
@@ -28,6 +30,6 @@ mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12)){
   }
 
     # Set scales
-    p <- p + scale_size(name='Mean', range=size)
+    p <- p + scale_size(name=legend, range=size)
     p
 }
