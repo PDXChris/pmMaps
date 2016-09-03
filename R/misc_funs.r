@@ -1,3 +1,9 @@
+#' Calculate summary statistic by station
+#' @param dfm data frame containing the data
+#' @param stat statistical function to calculate.  Mean is the default.
+#' @param station station field name, supplied as a string
+#' @param vbl field name numeric variable to summarize, supplied as a string
+#' @return a data frame with summary statistic by station
 #' @import plyr
 #' @export
 

@@ -4,17 +4,20 @@
 \alias{mapPMdata}
 \title{Map PAWMAP data}
 \usage{
-mapPMdata(dfm, vbl, color = NULL, size = c(3, 12))
+mapPMdata(dfm, vbl, color = NULL, size = c(3, 12), legend = "")
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}
 
 \item{vbl}{The field containing the value to map}
 
-\item{color}{The field containing the color variable.  Typically used to
-indicate percent detection. If not specified, the aesthetic is not mapped.}
+\item{color}{The field containing the variable for the color aesthetic.
+Typically used to indicate percent detection. If not specified, the
+aesthetic is not mapped.}
 
 \item{size}{The size range for the plotted points}
+
+\item{legend}{Text for the map legend}
 }
 \description{
 Map PAWMAP data
