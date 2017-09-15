@@ -2,13 +2,15 @@
 #' @param pltArterial Should the arterials shapefile be plotted?
 #' @param ldStreams Should the streams shapefile be loaded?  Note: this layer
 #' takes considerable time to plot
+#' @param xlim,ylim the x and y coordinate ranges supplied to coord_equal
+#' @param streamsLoc The filepath to the stream layer
 #' @import ggplot2
 #' @export
 
 
 mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE,
                       xlim=c(7607000, 7700000), ylim=c(650000,729000),
-                      streamsLoc='../R/pmMapsFiles/data/streamsFonly.rda'){
+                      streamsLoc='../R/pmMaps/pmMapsFiles/data/streamsFonly.rda'){
 
   ### load streams if TRUE
   if (ldStreams) load(streamsLoc)
