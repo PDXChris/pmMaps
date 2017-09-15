@@ -6,7 +6,8 @@
 #' @export
 
 
-mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE, ...){
+mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE,
+                      xlim=c(7607000, 7700000), ylim=c(650000,729000)){
 
   ### load streams if TRUE
   if (ldStreams) load('../pmMapsFiles/data/streamsFonly.rda')
@@ -21,7 +22,7 @@ mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE, ...){
                  colour='royalblue2', fill='white') +
 
     # Set up aesthetic elements
-    coord_equal(xlim=c(7607000, 7700000), ylim=c(650000,729000)) +
+    coord_equal(xlim=xlim, ylim=ylim) +
     xlab('') + ylab('')  + theme_bw() +
     theme(axis.text.x=element_blank(), axis.text.y=element_blank(),
           panel.grid.major=element_blank(),

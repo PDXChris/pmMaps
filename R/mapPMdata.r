@@ -9,10 +9,10 @@
 #' @import ggplot2
 #' @export
 
-mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend=""){
+mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="", ...){
 
   # plot base map
-  p <- mapPMbase()
+  p <- mapPMbase(...)
 
   # Merge station shapefile w/ data
   mapStations <- pmStations
