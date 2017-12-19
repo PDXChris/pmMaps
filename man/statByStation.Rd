@@ -4,7 +4,8 @@
 \alias{statByStation}
 \title{Calculate summary statistic by station}
 \usage{
-statByStation(dfm, stat = "mean", station = "loc_code", vbl = "result")
+statByStation(dfm, stat = "mean", station = "loc_code", vbl = "result",
+  cens = NULL)
 }
 \arguments{
 \item{dfm}{data frame containing the data}
@@ -14,6 +15,8 @@ statByStation(dfm, stat = "mean", station = "loc_code", vbl = "result")
 \item{station}{station field name, supplied as a string}
 
 \item{vbl}{field name numeric variable to summarize, supplied as a string}
+
+\item{cens}{optional field name indicating whether the analyte was detected ('=') or not ('<')}
 }
 \value{
 a data frame with summary statistic by station
@@ -21,4 +24,3 @@ a data frame with summary statistic by station
 \description{
 Calculate summary statistic by station
 }
-

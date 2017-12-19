@@ -4,7 +4,7 @@
 \alias{mapPMdata}
 \title{Map PAWMAP data}
 \usage{
-mapPMdata(dfm, vbl, color = NULL, size = c(3, 12), legend = "")
+mapPMdata(dfm, vbl, color = NULL, size = c(3, 12), legend = "", ...)
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}
@@ -22,4 +22,3 @@ aesthetic is not mapped.}
 \description{
 Map PAWMAP data
 }
-

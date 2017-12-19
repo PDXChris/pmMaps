@@ -4,15 +4,20 @@
 \alias{mapPMbase}
 \title{Map PAWMAP base map}
 \usage{
-mapPMbase(pltArterial = TRUE, ldStreams = FALSE, ...)
+mapPMbase(pltArterial = TRUE, ldStreams = FALSE, xlim = c(7607000,
+  7700000), ylim = c(650000, 729000), streamsLoc = list.files("../..",
+  pattern = "streamsFonly.rda", full.names = TRUE, recursive = TRUE))
 }
 \arguments{
 \item{pltArterial}{Should the arterials shapefile be plotted?}
 
 \item{ldStreams}{Should the streams shapefile be loaded?  Note: this layer
 takes considerable time to plot}
+
+\item{xlim, ylim}{the x and y coordinate ranges supplied to coord_equal}
+
+\item{streamsLoc}{The filepath to the stream layer}
 }
 \description{
 Map PAWMAP base map
 }
-

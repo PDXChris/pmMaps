@@ -3,6 +3,7 @@
 export(gmean)
 export(mapPMbase)
 export(mapPMdata)
+export(mapPMdiscr)
 export(statByStation)
 import(ggplot2)
 import(plyr)
