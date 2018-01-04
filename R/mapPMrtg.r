@@ -17,7 +17,7 @@ mapPMrtg <- function(dfm, vbl, legend="",  ...){
   class <- with(mapStations@data, classIntervals(dfm[[vbl]], nclr, style="quantile"))
   colcode <- c('forestgreen', 'green', 'yellow', 'darkorange', 'red2')
 
-  mapStations@data$cuts <- cut(mapStations@data$raneff, breaks=class$brks, include.lowest=TRUE, right=FALSE)
+  mapStations@data$cuts <- cut(mapStations@data[[vbl]], breaks=class$brks, include.lowest=TRUE, right=FALSE)
 
   p <-
     p + geom_point(aes(x,y, size=cuts, fill=cuts), shape=21, data=mapStations@data) +
