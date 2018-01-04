@@ -1,4 +1,4 @@
-#' Map PAWMAP data
+#' Map PAWMAP data by size w/ 2nd continuous variable by color
 #' @param dfm Data frame with data to be mapped
 #' @param vbl The field containing the value to map
 #' @param color The field containing the variable for the color aesthetic.

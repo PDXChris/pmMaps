@@ -1,4 +1,4 @@
-#' Map PAWMAP data
+#' Map PAWMAP categorical data by color
 #' @param dfm Data frame with data to be mapped
 #' @param vbl The field containing the categorical value to map
 #' @param legend Text for the map legend

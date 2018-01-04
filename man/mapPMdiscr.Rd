@@ -2,7 +2,7 @@
 % Please edit documentation in R/mapPMdiscr.r
 \name{mapPMdiscr}
 \alias{mapPMdiscr}
-\title{Map PAWMAP data}
+\title{Map PAWMAP categorical data by color}
 \usage{
 mapPMdiscr(dfm, vbl, legend = NULL, ...)
 }
@@ -14,5 +14,5 @@ mapPMdiscr(dfm, vbl, legend = NULL, ...)
 \item{legend}{Text for the map legend}
 }
 \description{
-Map PAWMAP data
+Map PAWMAP categorical data by color
 }

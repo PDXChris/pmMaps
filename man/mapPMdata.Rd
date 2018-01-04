@@ -2,7 +2,7 @@
 % Please edit documentation in R/mapPMdata.r
 \name{mapPMdata}
 \alias{mapPMdata}
-\title{Map PAWMAP data}
+\title{Map PAWMAP data by size w/ 2nd continuous variable by color}
 \usage{
 mapPMdata(dfm, vbl, color = NULL, size = c(3, 12), legend = "", ...)
 }
@@ -20,5 +20,5 @@ aesthetic is not mapped.}
 \item{legend}{Text for the map legend}
 }
 \description{
-Map PAWMAP data
+Map PAWMAP data by size w/ 2nd continuous variable by color
 }
