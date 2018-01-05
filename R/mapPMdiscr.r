@@ -16,7 +16,7 @@ mapPMdiscr <- function(dfm, vbl, legend=NULL, ...){
 
   # Map categorical variable
   p <- p + geom_point(data=mapStations@data,
-                      aes_string('x', 'y', colour=vbl),
+                      aes_string('POINT_X', 'POINT_Y', colour=vbl),
                       size=5)
   if (!is.null(legend)) {
     p <- p + scale_color_discrete(legend)

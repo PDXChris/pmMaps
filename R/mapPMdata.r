@@ -21,7 +21,7 @@ mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="", ...){
   # Add color if selected
   if (is.null(color)) {
     p <- p + geom_point(data=mapStations@data,
-                        aes_string('x', 'y', size=vbl),
+                        aes_string('POINT_X', 'POINT_Y', size=vbl),
                         colour='darkorange')
   } else {
     p <- p + geom_point(data=mapStations@data,
