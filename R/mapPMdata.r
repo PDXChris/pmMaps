@@ -16,7 +16,7 @@ mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="", ...){
 
   # Merge station shapefile w/ data
   mapStations <- pmStations
-  mapStations@data <- merge(mapStations@data, dfm, by.x='id', by.y='loc_code')
+  mapStations@data <- merge(mapStations@data, dfm, by='station')
 
   # Add color if selected
   if (is.null(color)) {

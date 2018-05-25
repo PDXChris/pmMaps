@@ -12,7 +12,7 @@ mapPMdiscr <- function(dfm, vbl, legend=NULL, ...){
 
   # Merge station shapefile w/ data
   mapStations <- pmStations
-  mapStations@data <- merge(mapStations@data, dfm, by.x='id', by.y='loc_code')
+  mapStations@data <- merge(mapStations@data, dfm, by = 'station')
 
   # Map categorical variable
   p <- p + geom_point(data=mapStations@data,
