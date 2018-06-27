@@ -12,8 +12,7 @@ mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE, ...){
 
   p <- mapPMbase(...)
   mapStations <- pmStations
-  mapStations@data <- merge(mapStations@data, dfm,
-                            by.x = "id", by.y = "loc_code")
+  mapStations@data <- merge(mapStations@data, dfm, by = "station")
 
   nclr <- 5
   class <- with(mapStations@data, classIntervals(dfm[[vbl]], nclr, style="quantile"))
