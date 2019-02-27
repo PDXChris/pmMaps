@@ -18,10 +18,10 @@ mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE,
 
   p <- ggplot() +
     # Map rivers
-    geom_polygon(data=rivers[rivers$hole=='FALSE',],
+    geom_polygon(data=rivers[rivers_pdx$hole=='FALSE',],
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='royalblue2') +
-    geom_polygon(data=rivers[rivers$hole==TRUE,],
+    geom_polygon(data=rivers[rivers_pdx$hole==TRUE,],
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='white') +
 
