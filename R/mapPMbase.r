@@ -11,7 +11,7 @@
 mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE,
                       xlim=c(7607000, 7700000), ylim=c(650000,729000),
                       streamsLoc=list.files('../..', pattern='streamsFonly.rda',
-                                           full.names=TRUE, recursive=TRUE)){
+                                           full.names=TRUE, recursive=TRUE)[1]){
 
   ### load streams if TRUE
   if (ldStreams) load(streamsLoc)
