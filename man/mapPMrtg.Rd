@@ -4,7 +4,7 @@
 \alias{mapPMrtg}
 \title{Map PAWMAP data by size w/ quantile indicated by color}
 \usage{
-mapPMrtg(dfm, vbl, legend = "", ...)
+mapPMrtg(dfm, vbl, legend = "", highgood = FALSE, ...)
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}
@@ -12,6 +12,9 @@ mapPMrtg(dfm, vbl, legend = "", ...)
 \item{vbl}{The field containing the value to map}
 
 \item{legend}{Text for the map legend}
+
+\item{highgood}{Are high values good (e.g., biotic indices = TRUE) or
+bad (e.g., pollutants = FALSE)?  Default is FALSE.}
 }
 \description{
 Map PAWMAP data by size w/ quantile indicated by color

@@ -6,7 +6,7 @@
 \usage{
 mapPMbase(pltArterial = TRUE, ldStreams = FALSE, xlim = c(7607000,
   7700000), ylim = c(650000, 729000), streamsLoc = list.files("../..",
-  pattern = "streamsFonly.rda", full.names = TRUE, recursive = TRUE))
+  pattern = "streamsFonly.rda", full.names = TRUE, recursive = TRUE)[1])
 }
 \arguments{
 \item{pltArterial}{Should the arterials shapefile be plotted?}
