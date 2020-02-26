@@ -4,9 +4,9 @@ Title: Map PAWMAP Data
 Version: 0.3
 Date: 2015-11-25
 Author: Chris Prescott
-Maintainer: Chris Precott <chris.prescott@portlandoregon.gov>
+Maintainer: Chris Prescott <chris.prescott@portlandoregon.gov>
 Description: Functions for formatting and mapping PAWMAP data.
 License: What license is it under?
 LazyData: TRUE
-RoxygenNote: 6.1.1
-Imports: ggplot2, plyr
+RoxygenNote: 7.0.2
+Imports: ggplot2, plyr, classInt
