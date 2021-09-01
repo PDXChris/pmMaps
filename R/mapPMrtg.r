@@ -8,15 +8,15 @@
 #' @import classInt
 #' @export
 
-mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE, ...){
+mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE,
+                     nclr=5, by.y = 'station', ...){
 
   p <- mapPMbase(...)
   mapStations <- pmStations
-  mapStations@data <- merge(mapStations@data, dfm, by = "station")
+  mapStations@data <- merge(mapStations@data, dfm, by.x = "station", by.y = by.y)
 
-  nclr <- 5
   class <- with(mapStations@data, classIntervals(dfm[[vbl]], nclr, style="quantile"))
-  colcode <- c('forestgreen', 'green', 'yellow', 'darkorange', 'red2')
+  colcode <- c('forestgreen', 'green', 'yellow', 'darkorange', 'red2')[1:nclr]
   if (highgood) colcode <- rev(colcode)
 
   mapStations@data$cuts <- cut(mapStations@data[[vbl]], breaks=class$brks, include.lowest=TRUE, right=FALSE)
