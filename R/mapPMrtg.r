@@ -4,6 +4,8 @@
 #' @param legend Text for the map legend
 #' @param highgood Are high values good (e.g., biotic indices = TRUE) or
 #' bad (e.g., pollutants = FALSE)?  Default is FALSE.
+#' @param nclr number of colors/breaks in data
+#' @param by.y field in data which matches with station field in shapefile
 #' @import ggplot2
 #' @import classInt
 #' @export
