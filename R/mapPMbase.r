@@ -11,17 +11,17 @@
 mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE,
                       xlim=c(7607000, 7700000), ylim=c(650000,729000),
                       streamsLoc=list.files('../..', pattern='streamsFonly.rda',
-                                           full.names=TRUE, recursive=TRUE)){
+                                           full.names=TRUE, recursive=TRUE)[1]){
 
   ### load streams if TRUE
   if (ldStreams) load(streamsLoc)
 
   p <- ggplot() +
     # Map rivers
-    geom_polygon(data=rivers[rivers$hole=='FALSE',],
+    geom_polygon(data=rivers_pdx[rivers_pdx$hole=='FALSE',],
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='royalblue2') +
-    geom_polygon(data=rivers[rivers$hole==TRUE,],
+    geom_polygon(data=rivers_pdx[rivers_pdx$hole==TRUE,],
                  aes(long, lat, group=group),
                  colour='royalblue2', fill='white') +
 
