@@ -31,7 +31,7 @@ mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE,
   p <- p + geom_point(aes(POINT_X, POINT_Y, size=cuts, fill=cuts),
                       shape=21, data=mapStations@data) +
     scale_size_manual(name=legend, values= c(4,6,8,10, 12),
-                      labels=leg.labels) +
+                      values=colcode, labels=leg.labels) +
     scale_fill_manual(name=legend, values=leg.labels)
 
   p
