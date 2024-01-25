@@ -11,6 +11,7 @@ mapPMrtg(
   highgood = FALSE,
   nclr = 5,
   by.y = "station",
+  cutStyle = "quantile",
   ...
 )
 }
@@ -27,6 +28,10 @@ bad (e.g., pollutants = FALSE)?  Default is FALSE.}
 \item{nclr}{number of colors/breaks in data}
 
 \item{by.y}{field in data which matches with station field in shapefile}
+
+\item{cutStyle}{method to use in classInterval for developing classes}
+
+\item{...}{additional parameters to pass to mapPMbase}
 }
 \description{
 Map PAWMAP data by size w/ quantile indicated by color
