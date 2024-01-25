@@ -6,7 +6,6 @@
 #' aesthetic is not mapped.
 #' @param size The size range for the plotted points
 #' @param legend Text for the map legend
-#' @param ... additional arguments passed to mapPMbase
 #' @import ggplot2
 #' @export
 
