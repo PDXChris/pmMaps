@@ -18,8 +18,6 @@ aesthetic is not mapped.}
 \item{size}{The size range for the plotted points}
 
 \item{legend}{Text for the map legend}
-
-\item{...}{additional arguments passed to mapPMbase}
 }
 \description{
 Map PAWMAP data by size w/ 2nd continuous variable by color
