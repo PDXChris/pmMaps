@@ -5,7 +5,6 @@
 #' @param xlim,ylim the x and y coordinate ranges supplied to coord_equal
 #' @param streamsLoc The filepath to the stream layer
 #' @import ggplot2
-#' @import sp
 #' @export
 
 
