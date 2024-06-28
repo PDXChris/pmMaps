@@ -7,11 +7,13 @@
 #' @param size The size range for the plotted points
 #' @param legend Text for the map legend
 #' @param stationName Data frame field containing PAWMAP site identifier
+#' @param ... Additional arguments passed to mapPMbase
 #' @import ggplot2
 #' @export
 
 mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="",
-                      stationName = 'site_identifier', ...){
+                      stationName = 'site_identifier',
+                      size.leg=NULL, fill.leg=NULL...){
 
   # plot base map
   p <- mapPMbase(...)
@@ -28,12 +30,13 @@ mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="",
                         fill='darkorange', colour = 'black', shape = 21)
   } else {
     p <- p + geom_sf(data=mapStations,
-                        aes_string(size=vbl, colour=color)) +
-      scale_color_continuous(name='Pct.\nDetect', low = 'grey', high = 'red')
+                        aes_string(size=vbl, fill=color),
+                     colour = 'black', shape = 21) +
+      scale_fill_continuous(name=fill.leg, low = 'grey', high = 'red3')
   }
 
     # Set scales
-    p <- p + scale_size(name=legend, range=size) +
+    p <- p + scale_size(name=size.leg, range=size) +
       coord_sf(xlim=mapFrame$Portland$xlim, ylim=mapFrame$Portland$ylim)
 
     p

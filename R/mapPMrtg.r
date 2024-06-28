@@ -8,16 +8,16 @@
 #' @param by.y field in data which matches with station field in shapefile
 #' @param cutStyle method to use in classInterval for developing classes
 #' @param sizeVals vector of point sizes for each color level
-#' @param mapZoom axes limits for map extent.  Currently one of
+#' @param extent Axes limits for map extent.  Currently one of
 #' c('Portland', 'West Hills', 'Tryon Creek', 'NW Streams')
-#' @param ... additional parameters to pass to mapPMbase
+#' @param ... Additional arguments passed to mapPMbase
 #' @import ggplot2
 #' @import classInt
 #' @export
 
 mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE,
                      nclr=5, by.y = 'site_identifier', cutStyle="quantile",
-                     sizeVals = c(4,6,8,10, 12), mapZoom = 'Portland', ...){
+                     sizeVals = c(4,6,8,10, 12), extent = 'Portland', ...){
 
   p <- mapPMbase(...)
 
@@ -36,7 +36,7 @@ mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE,
 
   ### Map ###
   # Set extent
-  map_lims <- mapFrame[mapZoom][[1]]
+  map_lims <- setMapFrame()
 
   p <- p + geom_sf(aes(size=cuts, fill=cuts),
                       shape=21, data=mapStations) +

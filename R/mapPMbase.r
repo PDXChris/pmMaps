@@ -1,8 +1,8 @@
 #' Map PAWMAP base map
-#' @param pltArterial Should the arterials shapefile be plotted?
-#' @param ldStreams Should the streams shapefile be loaded?  Note: this layer
+#' @param pltArterial Should the arterials be mapped?
+#' @param ldStreams Should the streams be mapped?  Note: this layer
 #' takes more time to plot
-#' @param waterColor color for rivers and streams
+#' @param waterColor R color name for rivers and streams
 #' @import ggplot2
 #' @import sf
 #' @export
