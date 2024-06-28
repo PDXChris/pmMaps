@@ -6,30 +6,35 @@
 #' aesthetic is not mapped.
 #' @param size The size range for the plotted points
 #' @param legend Text for the map legend
+#' @param stationName Data frame field containing PAWMAP site identifier
 #' @import ggplot2
 #' @export
 
-mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="", ...){
+mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="",
+                      stationName = 'site_identifier', ...){
 
   # plot base map
   p <- mapPMbase(...)
 
   # Merge station shapefile w/ data
-  mapStations <- pmStations
-  mapStations@data <- merge(mapStations@data, dfm, by='station')
+  #mapStations <- pmStations
+  mapStations <- merge(pmStations, dfm, by.x='location_code',
+                       by.y = stationName)
 
   # Add color if selected
   if (is.null(color)) {
-    p <- p + geom_point(data=mapStations@data,
-                        aes_string('POINT_X', 'POINT_Y', size=vbl),
-                        colour='darkorange')
+    p <- p + geom_sf(data=mapStations, inherit.aes = FALSE,
+                        aes_string(size=vbl),
+                        fill='darkorange', colour = 'black', shape = 21)
   } else {
-    p <- p + geom_point(data=mapStations@data,
-                        aes_string('POINT_X', 'POINT_Y', size=vbl, colour=color)) +
+    p <- p + geom_sf(data=mapStations,
+                        aes_string(size=vbl, colour=color)) +
       scale_color_continuous(name='Pct.\nDetect', low = 'grey', high = 'red')
   }
 
     # Set scales
-    p <- p + scale_size(name=legend, range=size)
+    p <- p + scale_size(name=legend, range=size) +
+      coord_sf(xlim=mapFrame$Portland$xlim, ylim=mapFrame$Portland$ylim)
+
     p
 }

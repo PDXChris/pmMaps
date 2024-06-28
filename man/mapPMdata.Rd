@@ -4,7 +4,15 @@
 \alias{mapPMdata}
 \title{Map PAWMAP data by size w/ 2nd continuous variable by color}
 \usage{
-mapPMdata(dfm, vbl, color = NULL, size = c(3, 12), legend = "", ...)
+mapPMdata(
+  dfm,
+  vbl,
+  color = NULL,
+  size = c(3, 12),
+  legend = "",
+  stationName = "site_identifier",
+  ...
+)
 }
 \arguments{
 \item{dfm}{Data frame with data to be mapped}
@@ -18,6 +26,8 @@ aesthetic is not mapped.}
 \item{size}{The size range for the plotted points}
 
 \item{legend}{Text for the map legend}
+
+\item{stationName}{Data frame field containing PAWMAP site identifier}
 }
 \description{
 Map PAWMAP data by size w/ 2nd continuous variable by color
