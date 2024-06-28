@@ -25,8 +25,8 @@ mapPMbase <- function(pltArterial=TRUE, ldStreams=FALSE,
 
   if (pltArterial) {
     # Add highways as landmarks
-    p <- p + geom_sf(colour='black', lwd=1, data=arter, inherit.aes = FALSE) +
-      geom_sf(colour='red', lwd=1.7, inherit.aes = FALSE, data=freeways)
+    p <- p + geom_sf(colour="grey72", lwd = 0.7, data=arter, inherit.aes = FALSE) +
+      geom_sf(colour="indianred2", lwd = 1.4, inherit.aes = FALSE, data=freeways)
 
   }
 
