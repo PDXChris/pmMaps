@@ -1,8 +1,8 @@
 Package: pmMaps
 Type: Package
 Title: Map PAWMAP Data
-Version: 0.3
-Date: 2015-11-25
+Version: 2.0
+Date: 2024-06-28
 Author: Chris Prescott
 Maintainer: Chris Prescott <chris.prescott@portlandoregon.gov>
 Description: Functions for formatting and mapping PAWMAP data.
