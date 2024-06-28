@@ -11,12 +11,11 @@ mapPMdiscr <- function(dfm, vbl, legend=NULL, ...){
   p <- mapPMbase(...)
 
   # Merge station shapefile w/ data
-  mapStations <- pmStations
-  mapStations@data <- merge(mapStations@data, dfm, by = 'station')
+  mapStations <- merge(pmStations, dfm, by = 'station')
 
   # Map categorical variable
-  p <- p + geom_point(data=mapStations@data,
-                      aes_string('POINT_X', 'POINT_Y', colour=vbl),
+  p <- p + geom_sf(data=mapStations,
+                      aes_string(colour=vbl),
                       size=5)
   if (!is.null(legend)) {
     p <- p + scale_color_discrete(legend)
