@@ -13,7 +13,7 @@
 
 mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="",
                       stationName = 'site_identifier',
-                      size.leg=NULL, fill.leg=NULL...){
+                      size.leg=NULL, fill.leg=NULL, ...){
 
   # plot base map
   p <- mapPMbase(...)
@@ -32,7 +32,7 @@ mapPMdata <- function(dfm, vbl, color=NULL, size=c(3,12), legend="",
     p <- p + geom_sf(data=mapStations,
                         aes_string(size=vbl, fill=color),
                      colour = 'black', shape = 21) +
-      scale_fill_continuous(name=fill.leg, low = 'grey', high = 'red3')
+      scale_fill_continuous(name=fill.leg, low = 'grey', high = 'red2')
   }
 
     # Set scales

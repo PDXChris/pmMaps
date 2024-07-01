@@ -13,7 +13,7 @@ mapPMrtg(
   by.y = "site_identifier",
   cutStyle = "quantile",
   sizeVals = c(4, 6, 8, 10, 12),
-  mapZoom = "Portland",
+  extent = "Portland",
   ...
 )
 }
@@ -35,10 +35,10 @@ bad (e.g., pollutants = FALSE)?  Default is FALSE.}
 
 \item{sizeVals}{vector of point sizes for each color level}
 
-\item{mapZoom}{axes limits for map extent.  Currently one of
+\item{extent}{Axes limits for map extent.  Currently one of
 c('Portland', 'West Hills', 'Tryon Creek', 'NW Streams')}
 
-\item{...}{additional parameters to pass to mapPMbase}
+\item{...}{Additional arguments passed to mapPMbase}
 }
 \description{
 Map PAWMAP data by size w/ quantile indicated by color

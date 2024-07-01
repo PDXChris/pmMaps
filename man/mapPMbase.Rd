@@ -7,12 +7,12 @@
 mapPMbase(pltArterial = TRUE, ldStreams = FALSE, waterColor = "royalblue2")
 }
 \arguments{
-\item{pltArterial}{Should the arterials shapefile be plotted?}
+\item{pltArterial}{Should the arterials be mapped?}
 
-\item{ldStreams}{Should the streams shapefile be loaded?  Note: this layer
+\item{ldStreams}{Should the streams be mapped?  Note: this layer
 takes more time to plot}
 
-\item{waterColor}{color for rivers and streams}
+\item{waterColor}{R color name for rivers and streams}
 }
 \description{
 Map PAWMAP base map

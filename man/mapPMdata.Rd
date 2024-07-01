@@ -11,6 +11,8 @@ mapPMdata(
   size = c(3, 12),
   legend = "",
   stationName = "site_identifier",
+  size.leg = NULL,
+  fill.leg = NULL,
   ...
 )
 }
@@ -28,6 +30,8 @@ aesthetic is not mapped.}
 \item{legend}{Text for the map legend}
 
 \item{stationName}{Data frame field containing PAWMAP site identifier}
+
+\item{...}{Additional arguments passed to mapPMbase}
 }
 \description{
 Map PAWMAP data by size w/ 2nd continuous variable by color
