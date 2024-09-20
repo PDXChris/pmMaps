@@ -17,7 +17,7 @@
 
 mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE,
                      nclr=5, by.y = 'site_identifier', cutStyle="quantile",
-                     sizeVals = c(4,6,8,10, 12), extent = 'Portland', ...){
+                     sizeVals = c(4,6,8,10,12), extent = 'Portland', ...){
 
   p <- mapPMbase(...)
 
