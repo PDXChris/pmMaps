@@ -36,7 +36,7 @@ mapPMrtg <- function(dfm, vbl, legend="",  highgood=FALSE,
 
   ### Map ###
   # Set extent
-  map_lims <- setMapFrame()
+  map_lims <- setMapFrame(extent = extent)
 
   p <- p + geom_sf(aes(size=cuts, fill=cuts),
                       shape=21, data=mapStations) +
